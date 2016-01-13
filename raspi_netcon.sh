@@ -1,5 +1,5 @@
 #!/bin/bash
-ip link set up dev enp0s25
+ip link set enp0s25 up
 ip addr add 10.10.10.1/24 dev enp0s25
 sysctl net.ipv4.ip_forward=1
 iptables -t nat -A POSTROUTING -o wlp3s0 -j MASQUERADE
