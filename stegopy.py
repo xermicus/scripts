@@ -9,8 +9,14 @@ format(130 & hex(2**16-1), 'b')
 # signed 32bit int to binary
 format(130 & hex(2**32-1), 'b')
 
-# hex touple to int
-struct.unpack("hh", str(frame))
+# binary string to int
+int('01110111', 2)
+
+# int to char
+chr(119)
+
+# char to int 
+ord('w')
 
 # lsb of a number
 lsb = number & 1
