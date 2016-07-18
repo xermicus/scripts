@@ -36,8 +36,14 @@ for y in xrange(h):
 	for x in xrange(w):
 		pixel = pixs[x,y]
 
-# loop through frames of a (stereo) wave audio file
+# loop through frames of a (stereo) wave audio file (python-wavefile)
 import wave
 wave_file = wave.open('audio_file.wav', 'rb')
 for i in range(wave_file.getnframes()):
   val = struct.unpack("hh", str(wave_file.readframes(1))) # convert frame to int values
+
+# loop through frames of a (stereo) wave audio file (scipy)
+from scipy.io import wavfile
+fs, data = wavfile.read('audio_file.wav')
+for i in range(len(data) - 1):
+        frame = data[i]
